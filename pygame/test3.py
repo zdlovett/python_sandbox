@@ -86,7 +86,7 @@ class Simulation:
 
         self.clock = pygame.time.Clock()
 
-        self.cube = Cube()
+        self.cubes = [Cube(), Cube(1, Point3D(10,1,1))]
 
 
     def run(self):
@@ -101,37 +101,28 @@ class Simulation:
             self.screen.fill((0,32,0))
 
             # It will hold transformed vertices.
-            t = []
+            for c in self.cubes:
+                t = c.project(self.screen.get_width(), self.screen.get_height(), 256, 10)
 
-            for v in self.vertices:
-                # Rotate the point around X axis, then around Y axis, and finally around Z axis.
-                r = v.rotateX(self.angle).rotateY(self.angle).rotateZ(self.angle)
-                # Transform the point from 3D to 2D
-                p = r.project(self.screen.get_width(), self.screen.get_height(), 256, 10)
-                # Put the point in the list of transformed vertices
-                t.append(p)
+                # Calculate the average Z values of each face.
+                avg_z = []
+                i = 0
+                for f in c.faces:
+                    z = (t[f[0]].z + t[f[1]].z + t[f[2]].z + t[f[3]].z) / 4.0
+                    avg_z.append([i,z])
+                    i = i + 1
 
-            # Calculate the average Z values of each face.
-            avg_z = []
-            i = 0
-            for f in self.faces:
-                z = (t[f[0]].z + t[f[1]].z + t[f[2]].z + t[f[3]].z) / 4.0
-                avg_z.append([i,z])
-                i = i + 1
-
-            # Draw the faces using the Painter's algorithm:
-            # Distant faces are drawn before the closer ones.
-            for tmp in sorted(avg_z,key=itemgetter(1),reverse=True):
-                face_index = tmp[0]
-                f = self.faces[face_index]
-                pointlist = [(t[f[0]].x, t[f[0]].y), (t[f[1]].x, t[f[1]].y),
+                    # Draw the faces using the Painter's algorithm:
+                    # Distant faces are drawn before the closer ones.
+                    for tmp in sorted(avg_z,key=itemgetter(1),reverse=True):
+                        face_index = tmp[0]
+                        f = c.faces[face_index]
+                        pointlist = [(t[f[0]].x, t[f[0]].y), (t[f[1]].x, t[f[1]].y),
                              (t[f[1]].x, t[f[1]].y), (t[f[2]].x, t[f[2]].y),
                              (t[f[2]].x, t[f[2]].y), (t[f[3]].x, t[f[3]].y),
                              (t[f[3]].x, t[f[3]].y), (t[f[0]].x, t[f[0]].y)]
-                pygame.draw.polygon(self.screen,self.colors[face_index],pointlist)
-
-            self.angle += 1
-
+                        pygame.draw.polygon(self.screen, c.colors[face_index],pointlist)
+                    c.angle += 1
             pygame.display.flip()
 
 if __name__ == "__main__":
