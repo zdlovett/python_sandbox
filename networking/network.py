@@ -1,7 +1,8 @@
 
 
 import time
-import threading
+import manager
+import workers
 from socket import *
 
 
@@ -14,6 +15,11 @@ from socket import *
 The class makes the following avaliable:
 1) get connections : returns a list of all connected remotes
 2) sent to connection : sents the given data to selected remotes
+
+
+interface for the network is to provide a list of peers.
+Each peer has a inbox and an outbox, thoughit is undecided if
+those are going to be events or polling based interface
 
 """
 
