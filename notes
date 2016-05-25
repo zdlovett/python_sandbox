@@ -1,0 +1,133 @@
+Changes:
+Change the ip of Artoo to 10.1.1.2 in the /etc/network/interfaces file
+Change the ip of Computer to 10.1.1.1 so that it will get the data headed to Artoo
+
+pixhawk version:
+1.2.19
+
+If you want to forward the sticks to a non-solo device modify /etc/inittab to
+echo the ip of the device that you want to sent to into /var/run/solo.ip once.
+The stick info is a UDP packet with the following format:
+Start
+Byte    Size    Description
+0       8       Timestamp, usec since stm32 process started
+8       2       Sequence number
+10      2       Channel 0       Left  up/down
+12      2       Channel 1       Right left/right
+14      2       Channel 2       Right up/down
+16      2       Channel 3       Left  left/right
+18      2       Channel 4       unknown
+20      2       Channel 5       Left paddle integrated position
+22      2       Channel 6       unknown
+24      2       Channel 7       Left paddle current position
+26 (packet length)
+
+Per solo:
+1) Kill the pair in /etc/inittab
+    Change default run level to 4
+    kill pixrc
+    kill video send
+    kill rssi send
+    kill telem_forwarder
+2) Change the /etc/network/interfaces file as seen below
+      -iface wlan0 inet dhcp
+      -       udhcpc_opts -x hostname:solo -T 1
+      +iface wlan0 inet static
+      +       address 10.1.1.XX
+      +       netmask 255.255.255.0
+      +       gateway 10.1.1.1
+             wireless_mode managed
+             wireless_essid any
+             wpa-driver nl80211
+3) Use sololink_config to update the ssid and password
+      sololink_config --set-wifi-ssid SoloLink_Swarm
+      sololink_config --set-wifi-password sololink
+    These commands should echo the new setting to the terminal
+    if they were successfully set.
+
+4) Change /usr/bin/runMAVProxy.sh and replace the --master command
+    with --master=/dev/ttymxc1 and add
+          --baudrate=921600
+          --rtscts
+          --out=10.1.1.1:145XX
+    where XX is the last block of the ip of the copter
+
+Change the Pixhawk params:
+arming_check -65 (skip rc)
+fs_gcs_enable 1
+fs_thr_enable 0
+rtl_wait_time 0
+arming timeout --This is not a exposed param, so it needs flight code changes
+
+
+Version 2, using John's telem_forwarder:
+
+1) Kill the pair in /etc/inittab
+    Change default run level to 4
+    kill pixrc
+    kill pair
+    kill video send
+    kill rssi send
+    kill mavproxy
+2) Change the /etc/network/interfaces file as seen below
+      -iface wlan0 inet dhcp
+      -       udhcpc_opts -x hostname:solo -T 1
+      +iface wlan0 inet static
+      +       address 10.1.1.XX
+      +       netmask 255.255.255.0
+      +       gateway 10.1.1.1
+             wireless_mode managed
+             wireless_essid any
+             wpa-driver nl80211
+3) Use sololink_config to update the ssid and password
+      sololink_config --set-wifi-ssid SoloLink_Swarm
+      sololink_config --set-wifi-password sololink
+    These commands should echo the new setting to the terminal
+    if they were successfully set.
+
+4) Change /etc/sololink.conf telemdest to 145XX where XX is the id
+    update the sololink.conf.md5 so that the change persists past reboot.
+
+
+
+Check to make sure that the RTL
+
+Solo host TODO list:
+Finish RTL ->may need to change the way we connect to pixhawk due to heartbeat from sololink
+Fix ID on RTL
+Stop spamming, better state detection
+Fix Arming / setting (guided?) mode
+
+
+Sending data to solo should just sent to (address, 14560)
+ cest@3dr_solo:~# diff /mnt/rootfs.ro/etc/network/interfaces /etc/network/interfac
+
+ --- /mnt/rootfs.ro/etc/network/interfaces
+ +++ /etc/network/interfaces
+ @@ -7,8 +7,10 @@
+
+ # Wireless interfaces
+
+ -iface wlan0 inet dhcp
+ -       udhcpc_opts -x hostname:solo -T 1
+ +iface wlan0 inet static
+ +       address 10.1.1.20
+ +       netmask 255.255.255.0
+ +       gateway 10.1.1.1
+        wireless_mode managed
+        wireless_essid any
+        wpa-driver nl80211
+
+
+ root@3dr_solo:~# diff /mnt/rootfs.ro/etc/sololink.orig /etc/sololink.conf
+ --- /mnt/rootfs.ro/etc/sololink.orig
+ +++ /etc/sololink.conf
+ @@ -2,7 +2,7 @@
+
+ artooIp=10.1.1.1
+
+ -soloIp=10.1.1.10
+ +soloIp=10.1.1.20
+
+ # Address to which RC packets are sent
+ rcDestPort=5005

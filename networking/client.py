@@ -21,4 +21,4 @@ while not done:
     except KeyboardInterrupt:
         done = True
 
-s.close                     # Close the socket when done
+s.close()                     # Close the socket when done
