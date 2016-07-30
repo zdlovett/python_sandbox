@@ -1,0 +1,300 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+App	pygame/test.py	/^class App:$/;"	c
+CRC8_INITIAL_VALUE	Bosch_LRM30.py	/^CRC8_INITIAL_VALUE = 0xAA$/;"	v
+CRC8_POLYNOMIAL	Bosch_LRM30.py	/^CRC8_POLYNOMIAL = 0xA6$/;"	v
+Cube	pygame/test2.py	/^class Cube:$/;"	c
+Cube	pygame/test3.py	/^class Cube:$/;"	c
+D	optical_power_calc.py	/^D = None #duty cycle, 0 - 1$/;"	v
+Gen_RandLine	matplotlib/3d_plot.py	/^def Gen_RandLine(length, dims=2) :$/;"	f
+Import	networking/client.py	/^import socket               # Import socket module$/;"	i
+Import	networking/server.py	/^import socket               # Import socket module$/;"	i
+Point3D	pygame/test2.py	/^class Point3D:$/;"	c
+Point3D	pygame/test3.py	/^class Point3D:$/;"	c
+Queue	matplotlib/point_plotter.py	/^import Queue$/;"	i
+RET_ERR_STATUS	Bosch_LRM30.py	/^RET_ERR_STATUS =   -2$/;"	v
+RET_ERR_TIMEOUT	Bosch_LRM30.py	/^RET_ERR_TIMEOUT=   -1$/;"	v
+RET_NOERR	Bosch_LRM30.py	/^RET_NOERR        =  1$/;"	v
+Simulation	pygame/test2.py	/^class Simulation:$/;"	c
+Simulation	pygame/test3.py	/^class Simulation:$/;"	c
+__call__	networking/manager.py	/^    def __call__(self):$/;"	m	class:worker	file:
+__call__	threading test/main.py	/^    def __call__(self):$/;"	m	class:worker	file:
+__init__	gps_dummy_script.py	/^    def __init__(self, output):$/;"	m	class:script
+__init__	matplotlib/plot_points.py	/^    def __init__(self):$/;"	m	class:target_point
+__init__	matplotlib/point_plotter.py	/^    def __init__(self):$/;"	m	class:target_point
+__init__	matplotlib/point_plotter.py	/^    def __init__(self, point_queue):$/;"	m	class:point_plotter
+__init__	networking/basic_broadcaster.py	/^    def __init__(self, port=None):$/;"	m	class:broadcaster
+__init__	networking/basic_listener.py	/^    def __init__(self, ip='', port=0):$/;"	m	class:listener
+__init__	networking/basic_sender.py	/^    def __init__(self, ip=None, port=None):$/;"	m	class:sender
+__init__	networking/manager.py	/^    def __init__(self):$/;"	m	class:manager
+__init__	networking/manager.py	/^    def __init__(self, killEvent, queue, *args):$/;"	m	class:worker
+__init__	pygame/test.py	/^    def __init__(self):$/;"	m	class:App
+__init__	pygame/test2.py	/^    def __init__(self, s=1, o=Point3D()):$/;"	m	class:Cube
+__init__	pygame/test2.py	/^    def __init__(self, win_width = 640, win_height = 480):$/;"	m	class:Simulation
+__init__	pygame/test2.py	/^    def __init__(self, x = 0, y = 0, z = 0):$/;"	m	class:Point3D
+__init__	pygame/test3.py	/^    def __init__(self, s=1, o=Point3D()):$/;"	m	class:Cube
+__init__	pygame/test3.py	/^    def __init__(self, win_width = 640, win_height = 480):$/;"	m	class:Simulation
+__init__	pygame/test3.py	/^    def __init__(self, x = 0, y = 0, z = 0):$/;"	m	class:Point3D
+__init__	threading test/main.py	/^    def __init__(self):$/;"	m	class:main
+__init__	threading test/main.py	/^    def __init__(self, name, timeout, killEvent, queue):$/;"	m	class:worker
+__init__	threading test/simpleThread.py	/^    def __init__(self, group=None, target=None, name=None, args=(), kwargs=None, verbose=None):$/;"	m	class:simpleThread
+a	basic/lists.py	/^a = [1,2,3,4,5,6,7,8]$/;"	v
+a3	matplotlib/plot_points.py	/^import mpl_toolkits.mplot3d.art3d as a3$/;"	i
+add_thread	networking/manager.py	/^    def add_thread(self, target, *args):$/;"	m	class:manager
+add_thread	threading test/main.py	/^    def add_thread(self, timeout, name):$/;"	m	class:main
+animation	matplotlib/3d_plot.py	/^import matplotlib.animation as animation$/;"	i
+animation	matplotlib/plot_points.py	/^import matplotlib.animation as animation$/;"	i
+animation	matplotlib/point_plotter.py	/^import matplotlib.animation as animation$/;"	i
+arcom	Bosch_LRM30.py	/^arcom = serial.Serial(laserAddress, 115200)$/;"	v
+area	optical_power_calc.py	/^def area(x, y, d):$/;"	f
+ax	matplotlib/3d_plot.py	/^ax = p3.Axes3D(fig)$/;"	v
+ax	matplotlib/plot_points.py	/^ax = p3.Axes3D(fig)$/;"	v
+b	basic/lists.py	/^b = [1,2,3,4,5,6,7,8]$/;"	v
+b	networking/basic_broadcaster.py	/^    b = broadcaster()$/;"	v
+broadcaster	networking/basic_broadcaster.py	/^class broadcaster(object):$/;"	c
+broadcaster	networking/basic_listener.py	/^from basic_broadcaster import broadcaster$/;"	i
+broadcaster	networking/basic_sender.py	/^from basic_broadcaster import broadcaster$/;"	i
+broadcaster	networking/workers.py	/^class broadcaster(manager.worker):$/;"	c
+calcCRC8	Bosch_LRM30.py	/^def calcCRC8(data, init):$/;"	f
+calcCRC8FromTuple	Bosch_LRM30.py	/^def calcCRC8FromTuple(pData, init):$/;"	f
+change_values	basic/lists.py	/^def change_values(a):$/;"	f
+close	networking/basic_broadcaster.py	/^    def close(self):$/;"	m	class:broadcaster
+close	networking/basic_listener.py	/^    def close(self):$/;"	m	class:listener
+close	networking/basic_sender.py	/^    def close(self):$/;"	m	class:sender
+collection	matplotlib/plot_points.py	/^collection = ax.scatter(p[0], p[1], p[2])$/;"	v
+color_generator	basic/partition.py	/^def color_generator(num):$/;"	f
+commands	Bosch_LRM30.py	/^commands = [$/;"	v
+connected	networking/client.py	/^            connected = True$/;"	v
+connected	networking/client.py	/^connected = False$/;"	v
+connection_worker	networking/server.py	/^def connection_worker(connection, done, queue):$/;"	f
+core	usb/list_script.py	/^import usb.core$/;"	i
+d	optical_power_calc.py	/^d = 0.2 #distance from emitter in mm$/;"	v
+data	matplotlib/3d_plot.py	/^data = [Gen_RandLine(25, 3) for index in range(50)]$/;"	v
+data	networking/broadcast.py	/^    data = "hello at time: " + str(time.time())$/;"	v
+data_worker	networking/server.py	/^def data_worker(done, queue):$/;"	f
+deg_to_rad	optical_power_calc.py	/^def deg_to_rad(d):$/;"	f
+deque	networking/manager.py	/^from collections import deque$/;"	i
+deque	networking/server.py	/^from collections import deque$/;"	i
+deque	threading test/main.py	/^from collections import deque$/;"	i
+dev	Bosch_LRM30.py	/^    dev = port[2]$/;"	v
+dev	list_serial_ports.py	/^    dev = port[2]$/;"	v
+devs	usb/list_script.py	/^devs = usb.core.find(find_all=True)$/;"	v
+do_stuff	threading test/main.py	/^    def do_stuff(self):$/;"	m	class:main
+done	networking/basic_broadcaster.py	/^    done = False$/;"	v
+done	networking/basic_listener.py	/^    done = False$/;"	v
+done	networking/basic_sender.py	/^    done = False$/;"	v
+done	networking/client.py	/^        done = True$/;"	v
+done	networking/client.py	/^done = False$/;"	v
+done	networking/server.py	/^        done = True$/;"	v
+done	networking/server.py	/^done = False$/;"	v
+fast_worker	networking/manager.py	/^class fast_worker(worker):$/;"	c
+fig	matplotlib/3d_plot.py	/^fig = plt.figure()$/;"	v
+fig	matplotlib/plot_points.py	/^fig = plt.figure()$/;"	v
+gen_target_points	matplotlib/plot_points.py	/^def gen_target_points():$/;"	f
+gen_target_points	matplotlib/point_plotter.py	/^    def gen_target_points():$/;"	m	class:point_plotter
+get_time_string	gps_dummy_script.py	/^    def get_time_string(self):$/;"	m	class:script
+get_xyz	matplotlib/plot_points.py	/^    def get_xyz(self):$/;"	m	class:target_point
+get_xyz	matplotlib/point_plotter.py	/^    def get_xyz(self):$/;"	m	class:target_point
+host	networking/client.py	/^host = socket.gethostname() # Get local machine name$/;"	v
+host	networking/server.py	/^host = socket.gethostname() # Get local machine name$/;"	v
+incoming	networking/server.py	/^incoming = deque()$/;"	v
+inplace_map	basic/lists.py	/^def inplace_map(l, f):$/;"	f
+io	Bosch_LRM30.py	/^import io$/;"	i
+io	gps_dummy_script.py	/^import io$/;"	i
+itemgetter	pygame/test2.py	/^from operator import itemgetter$/;"	i
+itemgetter	pygame/test3.py	/^from operator import itemgetter$/;"	i
+l	networking/basic_listener.py	/^    l = listener()$/;"	v
+laserAddress	Bosch_LRM30.py	/^        laserAddress = typ$/;"	v
+laserAddress	Bosch_LRM30.py	/^laserAddress = ""$/;"	v
+laserAddress	list_serial_ports.py	/^laserAddress = ""$/;"	v
+lastTime	Bosch_LRM30.py	/^        lastTime = time.time()$/;"	v
+lastTime	Bosch_LRM30.py	/^lastTime = 0$/;"	v
+line_ani	matplotlib/3d_plot.py	/^line_ani = animation.FuncAnimation(fig, update_lines, 25, fargs=(data, lines),$/;"	v
+line_ani	matplotlib/plot_points.py	/^line_ani = animation.FuncAnimation(fig, update_target_points, 1, fargs=(),$/;"	v
+lines	matplotlib/3d_plot.py	/^lines = [ax.plot(dat[0, 0:1], dat[1, 0:1], dat[2, 0:1])[0] for dat in data]$/;"	v
+list_ports	Bosch_LRM30.py	/^import serial.tools.list_ports$/;"	i
+list_ports	list_serial_ports.py	/^import serial.tools.list_ports$/;"	i
+listen	networking/basic_listener.py	/^    def listen(self):$/;"	m	class:listener
+listener	networking/basic_listener.py	/^class listener(object):$/;"	c
+listener	networking/basic_sender.py	/^from basic_listener import listener$/;"	i
+listener	networking/workers.py	/^class listener(manager.worker):$/;"	c
+log	Bosch_LRM30.py	/^log = open(path, 'w')$/;"	v
+main	threading test/main.py	/^class main:$/;"	c
+manager	networking/manager.py	/^class manager:$/;"	c
+manager	networking/workers.py	/^import manager$/;"	i
+math	matplotlib/3d_plot.py	/^import math$/;"	i
+math	matplotlib/plot_points.py	/^import math$/;"	i
+math	matplotlib/point_plotter.py	/^import math$/;"	i
+math	optical_power_calc.py	/^import math$/;"	i
+math	pygame/test2.py	/^import sys, math, pygame$/;"	i
+math	pygame/test3.py	/^import sys, math, pygame$/;"	i
+matplotlib	matplotlib/3d_plot.py	/^import matplotlib.animation as animation$/;"	i
+matplotlib	matplotlib/3d_plot.py	/^import matplotlib.pyplot as plt$/;"	i
+matplotlib	matplotlib/plot_points.py	/^import matplotlib.animation as animation$/;"	i
+matplotlib	matplotlib/plot_points.py	/^import matplotlib.pyplot as plt$/;"	i
+matplotlib	matplotlib/point_plotter.py	/^import matplotlib.animation as animation$/;"	i
+matplotlib	matplotlib/point_plotter.py	/^import matplotlib.pyplot as plt$/;"	i
+measureDistance	Bosch_LRM30.py	/^def measureDistance(comport, command, timeout):$/;"	f
+module	networking/client.py	/^import socket               # Import socket module$/;"	i
+module	networking/server.py	/^import socket               # Import socket module$/;"	i
+mpl_toolkits	matplotlib/3d_plot.py	/^import mpl_toolkits.mplot3d.axes3d as p3$/;"	i
+mpl_toolkits	matplotlib/plot_points.py	/^import mpl_toolkits.mplot3d.art3d as a3$/;"	i
+mpl_toolkits	matplotlib/plot_points.py	/^import mpl_toolkits.mplot3d.axes3d as p3$/;"	i
+mpl_toolkits	matplotlib/point_plotter.py	/^import mpl_toolkits.mplot3d.axes3d as p3$/;"	i
+mplot3d	matplotlib/3d_plot.py	/^import mpl_toolkits.mplot3d.axes3d as p3$/;"	i
+mplot3d	matplotlib/plot_points.py	/^import mpl_toolkits.mplot3d.art3d as a3$/;"	i
+mplot3d	matplotlib/plot_points.py	/^import mpl_toolkits.mplot3d.axes3d as p3$/;"	i
+mplot3d	matplotlib/point_plotter.py	/^import mpl_toolkits.mplot3d.axes3d as p3$/;"	i
+mult2	basic/lists.py	/^def mult2(a):$/;"	f
+n	optical_power_calc.py	/^n = 8 #number of emittors$/;"	v
+np	matplotlib/3d_plot.py	/^import numpy as np$/;"	i
+np	matplotlib/plot_points.py	/^import numpy as np$/;"	i
+np	matplotlib/point_plotter.py	/^import numpy as np$/;"	i
+numd	usb/list_script.py	/^numd = 0$/;"	v
+on_cleanup	pygame/test.py	/^    def on_cleanup(self):$/;"	m	class:App
+on_event	pygame/test.py	/^    def on_event(self, event):$/;"	m	class:App
+on_execute	pygame/test.py	/^    def on_execute(self):$/;"	m	class:App
+on_init	pygame/test.py	/^    def on_init(self):$/;"	m	class:App
+on_loop	pygame/test.py	/^    def on_loop(self):$/;"	m	class:App
+on_render	pygame/test.py	/^    def on_render(self):$/;"	m	class:App
+os	Bosch_LRM30.py	/^import os$/;"	i
+output	optical_power_calc.py	/^output = power_per_meter( p, area(x,y,d)) * n$/;"	v
+p	matplotlib/plot_points.py	/^p = gen_target_points()$/;"	v
+p	optical_power_calc.py	/^p = 1030.0 #Emitter power in mW$/;"	v
+p3	matplotlib/3d_plot.py	/^import mpl_toolkits.mplot3d.axes3d as p3$/;"	i
+p3	matplotlib/plot_points.py	/^import mpl_toolkits.mplot3d.axes3d as p3$/;"	i
+p3	matplotlib/point_plotter.py	/^import mpl_toolkits.mplot3d.axes3d as p3$/;"	i
+parse_sticks	networking/listener.py	/^def parse_sticks(data):$/;"	f
+path	Bosch_LRM30.py	/^    path = sys.argv[1]$/;"	v
+path	Bosch_LRM30.py	/^path = 'logfile.csv'$/;"	v
+plot	matplotlib/point_plotter.py	/^    plot = point_plotter(point_queue)$/;"	v	class:point_plotter
+plt	matplotlib/3d_plot.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	matplotlib/plot_points.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	matplotlib/point_plotter.py	/^import matplotlib.pyplot as plt$/;"	i
+point_plotter	matplotlib/point_plotter.py	/^class point_plotter:$/;"	c
+point_queue	matplotlib/point_plotter.py	/^    point_queue = Queue.Queue()$/;"	v	class:point_plotter
+port	networking/basic_broadcaster.py	/^    port = 12345$/;"	v	class:broadcaster
+port	networking/broadcast.py	/^port = 12345$/;"	v
+port	networking/client.py	/^port = 12346$/;"	v
+port	networking/listener.py	/^    port = 14570$/;"	v
+port	networking/listener.py	/^    port = int(sys.argv[1])$/;"	v
+port	networking/server.py	/^port = 12346                # Reserve a port for your service.$/;"	v
+ports	Bosch_LRM30.py	/^ports = serial.tools.list_ports.comports()$/;"	v
+ports	list_serial_ports.py	/^ports = serial.tools.list_ports.comports()$/;"	v
+power_for_time	gps_dummy_script.py	/^    def power_for_time(self, power, duration):$/;"	m	class:script
+power_per_meter	optical_power_calc.py	/^def power_per_meter(p_total, area):$/;"	f
+prog	networking/manager.py	/^    prog = manager()$/;"	v
+prog	networking/workers.py	/^    prog = manager.manager()$/;"	v
+prog	threading test/main.py	/^    prog = main()$/;"	v
+project	pygame/test2.py	/^    def project(self, screen_width, screen_height, fov, viewer_distance):$/;"	m	class:Cube
+project	pygame/test2.py	/^    def project(self, win_width, win_height, fov, viewer_distance):$/;"	m	class:Point3D
+project	pygame/test3.py	/^    def project(self, screen_width, screen_height, fov, viewer_distance):$/;"	m	class:Cube
+project	pygame/test3.py	/^    def project(self, win_width, win_height, fov, viewer_distance):$/;"	m	class:Point3D
+pygame	pygame/test.py	/^import pygame$/;"	i
+pygame	pygame/test2.py	/^import sys, math, pygame$/;"	i
+pygame	pygame/test3.py	/^import sys, math, pygame$/;"	i
+ramp	gps_dummy_script.py	/^    def ramp(self, start, end, step_time):$/;"	m	class:script
+random	networking/manager.py	/^import random$/;"	i
+random	threading test/main.py	/^import random$/;"	i
+remote	networking/workers.py	/^class remote(manager.worker):$/;"	c
+rotateX	pygame/test2.py	/^    def rotateX(self, angle):$/;"	m	class:Point3D
+rotateX	pygame/test3.py	/^    def rotateX(self, angle):$/;"	m	class:Point3D
+rotateY	pygame/test2.py	/^    def rotateY(self, angle):$/;"	m	class:Point3D
+rotateY	pygame/test3.py	/^    def rotateY(self, angle):$/;"	m	class:Point3D
+rotateZ	pygame/test2.py	/^    def rotateZ(self, angle):$/;"	m	class:Point3D
+rotateZ	pygame/test3.py	/^    def rotateZ(self, angle):$/;"	m	class:Point3D
+run	networking/manager.py	/^    def run(self):$/;"	m	class:manager
+run	pygame/test2.py	/^    def run(self):$/;"	m	class:Simulation
+run	pygame/test3.py	/^    def run(self):$/;"	m	class:Simulation
+run	threading test/simpleThread.py	/^    def run(self):$/;"	m	class:simpleThread
+s	networking/basic_sender.py	/^    s = sender()$/;"	v
+s	networking/broadcast.py	/^s = socket(AF_INET, SOCK_DGRAM)$/;"	v
+s	networking/client.py	/^s = socket.socket()         # Create a socket object$/;"	v
+s	networking/listener.py	/^s = socket(AF_INET, SOCK_DGRAM)$/;"	v
+s	networking/server.py	/^s = socket.socket()         # Create a socket object$/;"	v
+sampleTime	Bosch_LRM30.py	/^sampleTime = 60$/;"	v
+script	gps_dummy_script.py	/^class script(object):$/;"	c
+send	networking/basic_broadcaster.py	/^    def send(self, word):$/;"	m	class:broadcaster
+send	networking/basic_sender.py	/^    def send(self, word, address=None):$/;"	m	class:sender
+send	networking/workers.py	/^    def send(self, this_time):$/;"	m	class:broadcaster
+sendCommand	Bosch_LRM30.py	/^def sendCommand(cmd, comport):$/;"	f
+sender	networking/basic_sender.py	/^class sender(object):$/;"	c
+serial	Bosch_LRM30.py	/^import serial$/;"	i
+serial	Bosch_LRM30.py	/^import serial.tools.list_ports$/;"	i
+serial	list_serial_ports.py	/^import serial$/;"	i
+serial	list_serial_ports.py	/^import serial.tools.list_ports$/;"	i
+server	networking/workers.py	/^class server(manager.worker):$/;"	c
+set_power	gps_dummy_script.py	/^    def set_power(self, target):$/;"	m	class:script
+set_time	gps_dummy_script.py	/^    def set_time(self, time):$/;"	m	class:script
+set_to_random	matplotlib/plot_points.py	/^    def set_to_random(self):$/;"	m	class:target_point
+set_to_random	matplotlib/point_plotter.py	/^    def set_to_random(self):$/;"	m	class:target_point
+setup	networking/basic_listener.py	/^    def setup(self):$/;"	m	class:listener
+setup	networking/basic_sender.py	/^    def setup(self):$/;"	m	class:sender
+setup	networking/manager.py	/^    def setup(self):$/;"	m	class:fast_worker
+setup	networking/manager.py	/^    def setup(self):$/;"	m	class:worker
+setup	networking/workers.py	/^    def setup(self):$/;"	m	class:broadcaster
+setup	networking/workers.py	/^    def setup(self):$/;"	m	class:listener
+setup	networking/workers.py	/^    def setup(self):$/;"	m	class:remote
+setup	networking/workers.py	/^    def setup(self):$/;"	m	class:server
+simpleThread	threading test/simpleThread.py	/^class simpleThread(threading.Thread):$/;"	c
+socket	networking/client.py	/^import socket               # Import socket module$/;"	i
+socket	networking/server.py	/^import socket               # Import socket module$/;"	i
+start	gps_dummy_script.py	/^    def start(self):$/;"	m	class:script
+startTime	Bosch_LRM30.py	/^startTime = time.time()$/;"	v
+start_threads	networking/manager.py	/^    def start_threads(self):$/;"	m	class:manager
+start_threads	threading test/main.py	/^    def start_threads(self):$/;"	m	class:main
+start_time	networking/server.py	/^start_time = time.time()$/;"	v
+struct	networking/listener.py	/^import struct$/;"	i
+sys	Bosch_LRM30.py	/^import sys$/;"	i
+sys	networking/basic_listener.py	/^import sys$/;"	i
+sys	networking/listener.py	/^import sys$/;"	i
+sys	pygame/test2.py	/^import sys, math, pygame$/;"	i
+sys	pygame/test3.py	/^import sys, math, pygame$/;"	i
+t	networking/server.py	/^        t = threading.Thread(target=connection_worker, args=(connection, done, incoming))$/;"	v
+target_point	matplotlib/plot_points.py	/^class target_point:$/;"	c
+target_point	matplotlib/point_plotter.py	/^class target_point:$/;"	c
+theApp	pygame/test.py	/^    theApp = App()$/;"	v
+threading	networking/manager.py	/^import threading$/;"	i
+threading	networking/server.py	/^import threading$/;"	i
+threading	networking/workers.py	/^import threading$/;"	i
+threading	threading test/main.py	/^import threading$/;"	i
+threading	threading test/simpleThread.py	/^import threading$/;"	i
+threads	networking/server.py	/^threads = []$/;"	v
+time	Bosch_LRM30.py	/^import time$/;"	i
+time	matplotlib/point_plotter.py	/^import time$/;"	i
+time	networking/basic_broadcaster.py	/^    import time$/;"	i
+time	networking/basic_sender.py	/^    import time$/;"	i
+time	networking/broadcast.py	/^import time$/;"	i
+time	networking/client.py	/^import time$/;"	i
+time	networking/listener.py	/^import time$/;"	i
+time	networking/manager.py	/^import time$/;"	i
+time	networking/server.py	/^import time$/;"	i
+time	networking/workers.py	/^import time$/;"	i
+time	threading test/main.py	/^import time$/;"	i
+time	threading test/simpleThread.py	/^import time$/;"	i
+tools	Bosch_LRM30.py	/^import serial.tools.list_ports$/;"	i
+tools	list_serial_ports.py	/^import serial.tools.list_ports$/;"	i
+typ	Bosch_LRM30.py	/^    typ = port[0]$/;"	v
+typ	list_serial_ports.py	/^    typ = port[0]$/;"	v
+update	matplotlib/point_plotter.py	/^    def update(self):$/;"	m	class:point_plotter
+update_lines	matplotlib/3d_plot.py	/^def update_lines(num, dataLines, lines) :$/;"	f
+update_target_points	matplotlib/plot_points.py	/^def update_target_points(num):$/;"	f
+usb	usb/list_script.py	/^import usb.core$/;"	i
+usb	usb/list_script.py	/^import usb.util$/;"	i
+util	usb/list_script.py	/^import usb.util$/;"	i
+values_unchanged	basic/lists.py	/^def values_unchanged(a):$/;"	f
+work	networking/manager.py	/^    def work(self):$/;"	m	class:manager
+work	networking/manager.py	/^    def work(self):$/;"	m	class:worker
+work	networking/workers.py	/^    def work(self):$/;"	m	class:broadcaster
+work	networking/workers.py	/^    def work(self):$/;"	m	class:listener
+work	networking/workers.py	/^    def work(self):$/;"	m	class:remote
+work	networking/workers.py	/^    def work(self):$/;"	m	class:server
+worker	networking/manager.py	/^class worker:$/;"	c
+worker	threading test/main.py	/^    def worker(self, timeout, name):$/;"	m	class:main
+worker	threading test/main.py	/^class worker:$/;"	c
+x	optical_power_calc.py	/^x = 90 #FOVX in degrees$/;"	v
+y	optical_power_calc.py	/^y = 90 #FOVY in degrees$/;"	v
