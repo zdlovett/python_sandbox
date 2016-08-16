@@ -3,7 +3,7 @@ import time
 import random
 from collections import deque
 
-class worker:
+class worker(object):
     def __init__(self, name, timeout, killEvent, queue):
         self.name = name
         self.timeout = timeout
@@ -19,42 +19,29 @@ class worker:
                 self.killEvent.set()
         self.queue.append("hello from " + self.name)
 
-class main:
+class manager(object):
     def __init__(self):
         self.threads = []
         self.queue = deque()
-        self.kill = False
         self.killEvent = threading.Event()
 
-    def start_threads(self):
-        for thread in self.threads:
-            thread.start()
-
-    def worker(self, timeout, name):
-        startTime = time.time()
-        while time.time() - startTime < timeout and not self.kill:
-            try:
-                time.sleep(0.1)
-            except KeyboardInterrupt:
-                self.kill = True
-
-        self.data.append("hello from " + name)
-
-    def add_thread(self, timeout, name):
+    def add_thread(self, name, timeout):
         t = threading.Thread(target=worker(name, timeout, self.killEvent, self.queue), args=())
         self.threads.append(t)
+        t.start()
 
     def do_stuff(self):
         if len(self.queue) > 0:
             print self.queue.pop()
 
 if __name__ == "__main__":
-    prog = main()
+    prog = manager()
     prog.add_thread(1, "t1")
     prog.add_thread(3, "t2")
     prog.add_thread(6, "t3")
+    for i in range(1,100):
+        prog.add_thread(1.0/i, str(i))
 
-    prog.start_threads()
     try:
         while threading.active_count() > 1 and not prog.killEvent.isSet():
             prog.do_stuff()
