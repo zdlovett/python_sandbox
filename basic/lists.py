@@ -34,3 +34,16 @@ values_unchanged(b)
 print "inplace map test"
 inplace_map(b, mult2)
 print b
+
+
+list_o_lists = [[1,2],[2,3],[3,4],[4,5]]
+for [k, l] in list_o_lists:
+    if l == 4:
+        k
+    else:
+        print "not found
+
+if [1,2] in list_o_lists:
+    print "found the complete"
+else:
+    print "still didn't find the complete"
