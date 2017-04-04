@@ -4,8 +4,10 @@ import socket               # Import socket module
 import time
 
 s = socket.socket()         # Create a socket object
-host = socket.gethostname() # Get local machine name
-port = 12346
+host = "107.1.129.7"                   # Set the desired hostname
+port = 5001
+
+s.settimeout(0.5)
 
 done = False
 connected = False
