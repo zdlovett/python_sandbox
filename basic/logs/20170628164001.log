@@ -1,0 +1,20 @@
+[2017-06-28 16:40:02,298][core.db][DEBUG] SELECT *
+                    FROM public.dbt_poc0_dark_sample ds, public.dbt_poc0_exp_config ex
+                    ORDER BY end_time ASC; | None
+[2017-06-28 16:40:03,462][core.db][DEBUG] SELECT *
+                    FROM public.dbt_poc0_dark_sample ds, public.dbt_poc0_exp_config ex
+                    ORDER BY end_time ASC; | None
+[2017-06-28 16:40:04,605][core.db][DEBUG] query took 2.3068160730035743 seconds to query 2 dbs returning [46058, 46058] rows
+[2017-06-28 16:43:25,631][root][CRITICAL] Uncaught exception
+Traceback (most recent call last):
+  File "fast_compare.py", line 57, in <module>
+    results = results_q.get()
+  File "/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/queue.py", line 164, in get
+    self.not_empty.wait()
+  File "/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/threading.py", line 295, in wait
+    waiter.acquire()
+KeyboardInterrupt
+
+[2017-06-28 16:43:25,632][core.db][DEBUG] INSERT INTO dbt_event_log(record_time,event_type,description) VALUES (%s,%s,%s) ON CONFLICT DO NOTHING | [datetime.datetime(2017, 6, 28, 16, 43, 25, 631942), 'CRITICAL', 'logs/20170628164001.log\n/Users/zach/repo/codeVPCAMS/BEERCalStudyApps/core/log_setup.py:67 root\nUncaught exception\nTraceback (most recent call last):\n  File "fast_compare.py", line 57, in <module>\n    results = results_q.get()\n  File "/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/queue.py", line 164, in get\n    self.not_empty.wait()\n  File "/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/threading.py", line 295, in wait\n    waiter.acquire()\nKeyboardInterrupt\n']
+[2017-06-28 16:43:25,718][core.db][DEBUG] INSERT INTO dbt_event_log(record_time,event_type,description) VALUES (%s,%s,%s) ON CONFLICT DO NOTHING | [datetime.datetime(2017, 6, 28, 16, 43, 25, 718181), 'CRITICAL', 'logs/20170628164001.log\n/Users/zach/repo/codeVPCAMS/BEERCalStudyApps/core/log_setup.py:67 root\nUncaught exception\nTraceback (most recent call last):\n  File "fast_compare.py", line 57, in <module>\n    results = results_q.get()\n  File "/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/queue.py", line 164, in get\n    self.not_empty.wait()\n  File "/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/threading.py", line 295, in wait\n    waiter.acquire()\nKeyboardInterrupt\n']
+[2017-06-28 16:43:25,740][core.db][DEBUG] query took 0.10852000198792666 seconds to query 2 dbs returning [] rows
