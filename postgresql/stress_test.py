@@ -42,7 +42,7 @@ def generate_data( bundle ):
     insert_dicts(con, cur, 'best16', ld)
 
 def worker(name):
-    con = psycopg2.connect(host='localhost', database='best16', user='python', password='python', connect_timeout=5)
+    con = psycopg2.connect(host='zachbookpro.local', database='best16', user='python', password='python', connect_timeout=5)
     cur = con.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     bundle = (name, con, cur) 
 
