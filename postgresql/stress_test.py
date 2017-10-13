@@ -28,55 +28,36 @@ def random_row(name):
     row = {}
     row['timestamp'] = dt.now()
     row['hostname'] = f'{name}'
-    row['rmse'] = random.random() * 100
-    row['factor'] = random.randint(0, 1024)
-    row['wavelength'] = random.random() * 1000
+    row['rmse'] = 1.0
+    row['factor'] = 500
+    row['wavelength'] = 1000.0
     return row
 
 def generate_data( bundle ):
     name, con, cur = bundle
-    
-    num_rows = random.randint( 1, 100 )
-    
+    num_rows = 1#random.randint(1, 10)
     ld = []
     for _ in range(num_rows):
         ld.append( random_row( name ) )
     insert_dicts(con, cur, 'best16', ld)
 
-def worker(bundle):
-    print(f"Worker has bundle: {bundle}")
-    num_inserts = random.randint(100, 10000)
-    for i in range( num_inserts ):
-        generate_data( bundle )
-
-bundles = [] #(number, con, cur)
-for i in range(50):
+def worker(name):
     con = psycopg2.connect(host='localhost', database='best16', user='python', password='python', connect_timeout=5)
     cur = con.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-    bundles.append( (i, con, cur) )
+    bundle = (name, con, cur) 
 
-print(f"Active cons:{len(bundles)}")
-
-#print('spawning worker threads')
-#workers = []
-#for b in bundles:
-#    t = Thread(target=worker, args=(b, 1000) )
-#    t.start()
-#    workers.append(t)
-#print("workers spawned, waiting for work to finish")
-#
-##close everything
-#for w in workers:
-#    w.join()
+    num_inserts = random.randint(10000, 100000)
+    print(f"Running worker {name} inserting {num_inserts} lds")
+    for i in range( num_inserts ):
+        generate_data( bundle )
+    
+    con.close()
 
 #pool based
-print("Starting pools")
-with mp.Pool(5) as pool:
-    pool.map( worker, bundles )
-
-print("All work finished")
-for i, con, cur in bundles:
-     con.close()
+num_pools = 50
+print(f"Starting {num_pools} pools")
+with mp.Pool(num_pools) as pool:
+    pool.map( worker, range(num_pools * 10) )
 
 print("All connections have closed")
     
