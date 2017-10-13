@@ -1,12 +1,17 @@
-from threading import Thread, Event
-from queue import Queue
+#from threading import Thread, Event
+from multiprocessing import Process, Event, Queue
+#from queue import Queue
 
 import time, random
 
 def worker(name, msg_q, kill_e):
     while not kill_e.is_set():
-        msg_q.put(f"Hello from {name} at time {time.monotonic()}")
-        time.sleep( random.random() * 10 )
+        try:
+            msg_q.put(f"Hello from {name} at time {time.monotonic()}")
+            time.sleep( random.random() * 10 )
+        except KeyboardInterrupt:
+            msg_q.put(f"Interrupt from {name}")
+            print(f"{name} got interrupt")
     msg_q.put(f"{name} has finished looping.")
 
 def main():
@@ -14,7 +19,8 @@ def main():
     messages = Queue()
     kill_e = Event()
     for i in range(10):
-        t = Thread(target=worker, args=(i, messages, kill_e))
+        t = Process(target=worker, args=(i, messages, kill_e))
+        #t = Thread(target=worker, args=(i, messages, kill_e))
         t.start()
         threads.append(t)
     
