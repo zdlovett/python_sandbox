@@ -21,8 +21,9 @@ def insert_dicts(con, cur, table, entries):
         _placeholders = ','.join(['%s']*len(_values))
         commands += f"INSERT INTO {table}({_names}) VALUES ({_placeholders}) ON CONFLICT DO NOTHING;"
         values += _values
-    cur.execute(commands, values)
-    con.commit()
+    while True:
+        cur.execute(commands, values)
+        con.commit()
 
 def random_row(name):
     row = {}
@@ -46,20 +47,19 @@ def worker(name):
     cur = con.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     bundle = (name, con, cur) 
 
-    num_inserts = random.randint(10000, 100000)
+    num_inserts = 100000#random.randint(10000, 100000)
     print(f"Running worker {name} inserting {num_inserts} lds")
     for i in range( num_inserts ):
         generate_data( bundle )
     
     con.close()
 
+
 #pool based
-num_pools = 50
+num_pools = 4
 print(f"Starting {num_pools} pools")
 with mp.Pool(num_pools) as pool:
     pool.map( worker, range(num_pools * 10) )
 
-print("All connections have closed")
-    
-    
+print("All connections have closed")   
 
