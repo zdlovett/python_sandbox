@@ -6,4 +6,4 @@ numd = 0
 for d in devs:
     print(d)
     numd += 1
-print("number of detected devices:", numd)
+print(f"number of detected devices:{numd}")

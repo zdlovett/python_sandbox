@@ -4,8 +4,8 @@ import socket               # Import socket module
 import time
 
 s = socket.socket()         # Create a socket object
-host = "107.1.129.7"                   # Set the desired hostname
-port = 5001
+host = "10.0.100.55"                   # Set the desired hostname
+port = 5000
 
 s.settimeout(0.5)
 

@@ -47,3 +47,19 @@ if [1,2] in list_o_lists:
     print "found the complete"
 else:
     print "still didn't find the complete"
+
+
+#show that default params are shared between 
+def foo(a_num=0, a_list=[]):
+    a_list.append(a_num)
+    return a_list
+
+l = []
+l = foo(1, l)
+l = foo(2, l)
+print(l)
+
+foo(3)
+foo(4)
+l2 = foo(5)
+print(l2)
